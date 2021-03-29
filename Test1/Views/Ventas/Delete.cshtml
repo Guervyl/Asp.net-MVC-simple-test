@@ -1,0 +1,48 @@
+﻿@model Core.EntityFramework.Venta
+
+@{
+    ViewBag.Title = "Borrar venta";
+}
+
+<h2>Borrar venta</h2>
+
+<h3>¿Estas seguro que deseas borrar esta venta?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            nombre proveedor
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedor.nombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-danger" /> |
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </div>
+    }
+</div>
